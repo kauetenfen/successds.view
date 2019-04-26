@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://xmlns.jcp.org/jsf/core"
+  xmlns:p="http://primefaces.org/ui"
+  xmlns:pe="http://primefaces.org/ui/extensions">
+
+<h:head>
+  <title>Login</title>
+  <style type="text/css">
+	#imgpos {
+		position:absolute;
+		left:50%;
+		top:30%;
+		margin-left:-110px;
+		margin-top:-40px;
+	}
+	#imagemLogin {
+		max-width:230px;
+	    max-height:180px;
+	    width: auto;
+	    height: auto;
+	}
+	</style>
+</h:head>
+
+<h:body>
+  <h:form prependId="false">
+	<div id="imgpos">
+	<img src="/successds/images/logo_progic_3d.jpg" id="imagemLogin"/>
+    <p:panelGrid columns="1" styleClass="ui-fluid center ui-noborder">
+      <p:outputLabel value="Usuario e/ou senha incorretos!" styleClass="red" rendered="${!empty param['error']}" />
+
+      <p:inputText id="username" placeholder="Usuário" />
+      <p:password id="password" placeholder="Senha" />
+
+      <p:commandButton value="Login" ajax="false" />
+    </p:panelGrid>
+	</div>
+  </h:form>
+</h:body>
+</html>

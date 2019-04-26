@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      
+    <body>
+        <ui:composition>
+	  		<img src="/successds/images/marca_progic.png" id="imagemLogo"/>	
+			<h:form>
+		        <p:menubar>
+			        <p:submenu label="Atividade" icon="pi pi-pencil">
+			            <p:menuitem value="logout" url="/successds/logout" icon="fas fa-sign-out-alt" />
+			        </p:submenu>
+			        <p:submenu label="#{autenticacaoBean.nomeUsuarioLogado}" icon="far fa-user" style="float:right">
+						<p:menuitem value="Sair" url="/successds/logout" icon="fas fa-sign-out-alt"/>
+					</p:submenu>
+		   		</p:menubar>
+		   		
+		   		<p:tabMenu activeIndex="#{param.i}" id="menuAbas" >
+		    		<p:menuitem value="Players Internos" outcome="/private/meus_players_internos" icon="pi pi-star">
+				        <f:param name="i" value="0" />
+				    </p:menuitem>
+		    		<p:menuitem value="Players resetando" outcome="/private/players_resetando" icon="pi pi-star">
+				        <f:param name="i" value="1" />
+				    </p:menuitem>
+				    <p:menuitem value="Players com problema de download" outcome="/private/players_problema_download" icon="pi pi-star">
+				        <f:param name="i" value="2" />
+				    </p:menuitem>
+				    <p:menuitem value="Players com problema de storage" outcome="/private/players_problema_storage" icon="pi pi-star">
+				        <f:param name="i" value="3" />
+				    </p:menuitem>
+				    <p:menuitem value="Players com problema de reprodução" outcome="/private/players_problema_reproducao" icon="pi pi-star">
+				        <f:param name="i" value="4" />
+				    </p:menuitem>
+				    <p:menuitem value="Logs e comandos" outcome="/private/logs_comandos" icon="pi pi-star">
+				        <f:param name="i" value="5" />
+				    </p:menuitem>
+	    		</p:tabMenu>
+		   		
+	  		</h:form>
+        </ui:composition>
+    </body>
+</html>
